@@ -16,3 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Display time elapsed
+        run: echo "⏱️ Time elapsed: $((($(date +%s) - $START_TIME)/60)) minutes and $((($(date +%s) - $START_TIME)%60)) seconds."
+        env:
+          START_TIME: ${{ github.run_started_at }}
+
