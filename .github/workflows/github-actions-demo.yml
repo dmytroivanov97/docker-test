@@ -17,6 +17,7 @@ jobs:
           ls ${{ github.workspace }}
           cd ${{ github.workspace }}
           pwd
+          cat /home/runner/work/docker-test/docker-test/cat.txt
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Display time elapsed
         run: |
