@@ -5,40 +5,34 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List files in root directory
-        run: ls 
+      - name: pwd ${{ github.workspace }}
+        run: cd ${{ github.workspace }}
+             pwd
       - name: PWD
         run: pwd
       - name: Display event trigger
         run: |
           echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-          cat docker-test/cat.txt
       - name: Display server information
         run: |
           echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-          cat docker-test/cat.txt
       - name: Display branch and repository
         run: |
           echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-          cat docker-test/cat.txt
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Display repository cloning information
         run: |
           echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-          cat docker-test/cat.txt
       - name: Display workflow readiness
         run: |
           echo "🖥️ The workflow is now ready to test your code on the runner."
-          cat docker-test/cat.txt
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          cat docker-test/cat.txt
       - name: Display job status
         run: |
           echo "🍏 This job's status is ${{ job.status }}."
-          cat docker-test/cat.txt
       - name: Display time elapsed
         run: |
           ELAPSED_TIME=$((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))/60))
