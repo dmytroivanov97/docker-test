@@ -8,6 +8,8 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: The first appearance of the cat
+        run: cat /home/runner/work/docker-test/docker-test/cat.txt
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
@@ -15,11 +17,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          cd ${{ github.workspace }}
-          pwd
           cat /home/runner/work/docker-test/docker-test/cat.txt
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Display time elapsed
         run: |
           ELAPSED_TIME=$((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))/60))
           echo "⏱️ Time elapsed: $ELAPSED_TIME minutes and $((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))%60)) seconds."
+          cat /home/runner/work/docker-test/docker-test/cat.txt
