@@ -14,7 +14,7 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: The first appearance of the cat
         run: |
-          cat /home/runner/work/docker-test/docker-test/cat.txt
+          cat ${{ github.workspace }}/cat.txt
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
