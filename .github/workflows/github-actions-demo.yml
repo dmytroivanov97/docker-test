@@ -18,10 +18,10 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          cat /home/runner/work/docker-test/docker-test/cat.txt
+          cat ${{ github.workspace }}/cat.txt
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Display time elapsed
         run: |
           ELAPSED_TIME=$((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))/60))
           echo "⏱️ Time elapsed: $ELAPSED_TIME minutes and $((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))%60)) seconds."
-          cat /home/runner/work/docker-test/docker-test/cat.txt
+          cat ${{ github.workspace }}/cat.txt
