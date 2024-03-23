@@ -25,4 +25,3 @@ jobs:
           ELAPSED_TIME=$((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))/60))
           echo "⏱️ Time elapsed: $ELAPSED_TIME minutes and $((($(date +%s) - $(date -d "${{ github.run_started_at }}" +%s))%60)) seconds."
           cat ${{ github.workspace }}/cat.txt
-          echo "The end"
